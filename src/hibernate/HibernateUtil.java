@@ -19,6 +19,7 @@ import org.hibernate.service.ServiceRegistryBuilder;
 		session.beginTransaction(); <br>
 		session.save(foo); <br>
 		session.getTransaction().commit(); <br>
+		session.close();<br>
 	</code>
 <br>
 <br>
@@ -28,7 +29,8 @@ import org.hibernate.service.ServiceRegistryBuilder;
 	<code>
 		Session session = HibernateUtil.getSessionFactory().openSession(); <br>
 		Query query = session.createQuery(HQLquery); <br>
-		return query.list(); <br>
+		session.close(); <br>
+		List list = query.list(); //query results <br>
 	</code>
 <br>
  *
