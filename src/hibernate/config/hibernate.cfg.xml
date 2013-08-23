@@ -6,14 +6,15 @@
       
 <hibernate-configuration>
 	<session-factory>
-		<!--Modify these values to fit database specs 
+		<!--  Database specs -->
 		
-		<property name="connection.driver_class"></property>
-		<property name="connection.username"></property>
-		<property name="connection.password"></property>
-		<property name="dialect"></property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://cannoncomputing.com/africa</property>
+		<property name="connection.username">africa_demo</property>
+		<property name="connection.password">password</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		
-		-->
+		 
 		
 		<!--  c3p0 settings -->
 		
@@ -23,7 +24,7 @@
 		
 		
 		<!-- Persistent-object mapping -->
-		<mapping resource="hibernate/mapping.hbm.xml" />
+		<mapping resource="hibernate/config/mapping.hbm.xml" />
 		
 		
 	</session-factory>

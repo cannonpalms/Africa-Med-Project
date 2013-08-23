@@ -9,35 +9,35 @@ import org.hibernate.service.ServiceRegistryBuilder;
  * 
  * Provides access to the singleton database session factory. 
  * <br>
- * To insert data:
+ * <br>
+ * <br>
+ * To insert data (example usage):
+<br>
 <br>
 	<code>
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-		session.save(foo);
-		session.getTransaction().commit();
+		Session session = HibernateUtil.getSessionFactory().openSession(); <br>
+		session.beginTransaction(); <br>
+		session.save(foo); <br>
+		session.getTransaction().commit(); <br>
 	</code>
 <br>
 <br>
  * To query data:
 <br>
+<br>
 	<code>
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Query query = session.createQuery(HQLquery);
-		return query.list();
+		Session session = HibernateUtil.getSessionFactory().openSession(); <br>
+		Query query = session.createQuery(HQLquery); <br>
+		return query.list(); <br>
 	</code>
 <br>
- * 
- *
- *
- * @author Cannon
  *
  */
 public class HibernateUtil {
 
 	private static final SessionFactory SESSION_FACTORY;
 	
-	private static final String CONFIG_FILE_PATH = "hibernate/config/hibnernate.cfg.xml";
+	private static final String CONFIG_FILE_PATH = "hibernate/config/hibernate.cfg.xml";
 	
 	static {
 		Configuration conf = new Configuration()

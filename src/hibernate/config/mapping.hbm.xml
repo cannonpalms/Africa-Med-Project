@@ -5,6 +5,13 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
         
 <hibernate-mapping>
-	
+	<class name="hibernate.demo.User" table="users">
+		<id name="id" column="user_id">
+			<generator class="identity" />
+		</id>
+		
+		<property name="username" column="username" />
+		<property name="password" column="password" />
+	</class>
 	
 </hibernate-mapping>
