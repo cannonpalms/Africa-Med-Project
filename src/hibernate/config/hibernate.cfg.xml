@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+      "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+      "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd" >
+      
+<hibernate-configuration>
+	<session-factory>
+		<!--Modify these values to fit database specs 
+		
+		<property name="connection.driver_class"></property>
+		<property name="connection.username"></property>
+		<property name="connection.password"></property>
+		<property name="dialect"></property>
+		
+		-->
+		
+		<!--  c3p0 settings -->
+		
+		<property name="c3p0.initialPoolSize">10</property>
+		<property name="c3p0.minPoolSize">10</property>
+		<property name="c3p0.maxPoolSize">100</property>
+		
+		
+		<!-- Persistent-object mapping -->
+		<mapping resource="hibernate/mapping.hbm.xml" />
+		
+		
+	</session-factory>
+</hibernate-configuration>
