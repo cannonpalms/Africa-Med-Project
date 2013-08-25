@@ -8,14 +8,13 @@ import org.hibernate.Session;
 public class Demo {
 
 	public static void main(String[] args) {
-		String username = randomString();
-		String password = randomString();
-		
-		addUserToDatabase(username, password);
-		
-		User user = searchForUser(username);
-		
-		System.out.println(user);
+		for (int i = 0; i < 1000; i++) {
+			String username = randomString();
+			String password = randomString();
+			addUserToDatabase(username, password);
+			User user = searchForUser(username);
+			System.out.println(user);
+		}
 	}
 	
 	private static void addUserToDatabase(String username, String password) {

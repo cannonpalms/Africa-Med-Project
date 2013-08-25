@@ -1,8 +1,18 @@
 package hibernate.demo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="users")
+@org.hibernate.annotations.Table(appliesTo="users")
 public class User {
 
-	private Integer ID;
+	private long ID;
 	private String username;
 	private String password;
 	
@@ -15,19 +25,24 @@ public class User {
 		this.password = password;
 	}
 
+	@Column(name="username")
 	public String getUsername() {
 		return username;
 	}
 
+	@Column(name="password")
 	public String getPassword() {
 		return password;
 	}
 	
-	public Integer getID() {
+	@Id
+	@GeneratedValue
+	@Column(name="user_id")
+	public long getID() {
 		return ID;
 	}
 	
-	public void setID(Integer ID) {
+	public void setID(long ID) {
 		this.ID = ID;
 	}
 

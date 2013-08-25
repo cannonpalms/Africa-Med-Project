@@ -23,9 +23,9 @@
 		<property name="c3p0.maxPoolSize">100</property>
 		
 		
-		<!-- Persistent-object mapping -->
+		<!-- Persistent-object mapping
 		<mapping resource="hibernate/config/mapping.hbm.xml" />
-		
+		-->
 		
 	</session-factory>
 </hibernate-configuration>

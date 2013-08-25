@@ -1,5 +1,7 @@
 package hibernate;
 
+import hibernate.demo.User;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistryBuilder;
@@ -43,7 +45,9 @@ public class HibernateUtil {
 	
 	static {
 		Configuration conf = new Configuration()
-						.configure(CONFIG_FILE_PATH);
+						.configure(CONFIG_FILE_PATH)
+						.addPackage("hibernate.demo")
+						.addAnnotatedClass(User.class);
 		
 		SESSION_FACTORY = conf.buildSessionFactory(
 								new ServiceRegistryBuilder()
