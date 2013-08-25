@@ -2,7 +2,7 @@ package hibernate.demo;
 
 public class User {
 
-	private Integer id;
+	private Integer ID;
 	private String username;
 	private String password;
 	
@@ -24,7 +24,11 @@ public class User {
 	}
 	
 	public Integer getID() {
-		return id;
+		return ID;
+	}
+	
+	public void setID(Integer ID) {
+		this.ID = ID;
 	}
 
 	public void setUsername(String username) {
@@ -37,7 +41,7 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "id: " + id
+		return "id: " + ID
 				+ " username: " + username
 				+ " password: " + password;
 	}

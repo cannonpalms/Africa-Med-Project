@@ -9,9 +9,9 @@
 		<!--  Database specs -->
 		
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://cannoncomputing.com/africa</property>
-		<property name="connection.username">africa_demo</property>
-		<property name="connection.password">password</property>
+		<property name="connection.url">jdbc:mysql://africawebtesting.db.11678967.hostedresource.com/africawebtesting</property>
+		<property name="connection.username">africawebtesting</property>
+		<property name="connection.password">Cancan33!</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		
 		 

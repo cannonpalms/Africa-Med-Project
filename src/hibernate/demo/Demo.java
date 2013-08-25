@@ -31,12 +31,12 @@ public class Demo {
 	private static User searchForUser(String username) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		
-		String hql = "select User where username = " + username;
+		String hql = "from User as user where user.username = '" + username + "'";
 		Query query = session.createQuery(hql);
-		
-		session.close();
+	
 		User result = (User) query.uniqueResult(); //only one result from this query
 		
+		session.close();
 		return result;
 	}
 	
