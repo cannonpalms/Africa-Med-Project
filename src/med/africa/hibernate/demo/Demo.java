@@ -1,6 +1,6 @@
-package hibernate.demo;
+package med.africa.hibernate.demo;
 
-import hibernate.HibernateUtil;
+import med.africa.hibernate.HibernateUtil;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
