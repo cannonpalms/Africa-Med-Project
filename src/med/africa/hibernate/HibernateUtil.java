@@ -1,6 +1,8 @@
-package hibernate;
+package med.africa.hibernate;
 
-import hibernate.demo.User;
+import med.africa.hibernate.demo.User;
+import med.africa.patient.Allergy;
+import med.africa.patient.Patient;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -41,13 +43,16 @@ public class HibernateUtil {
 
 	private static final SessionFactory SESSION_FACTORY;
 	
-	private static final String CONFIG_FILE_PATH = "hibernate/config/hibernate.cfg.xml";
+	private static final String CONFIG_FILE_PATH = "med/africa/hibernate/config/hibernate.cfg.xml";
 	
 	static {
 		Configuration conf = new Configuration()
 						.configure(CONFIG_FILE_PATH)
-						.addPackage("hibernate.demo")
-						.addAnnotatedClass(User.class);
+						.addPackage("med.africa.hibernate.demo")
+						.addAnnotatedClass(User.class)
+						.addPackage("med.africa.patient")
+						.addAnnotatedClass(Patient.class)
+						.addAnnotatedClass(Allergy.class);
 		
 		SESSION_FACTORY = conf.buildSessionFactory(
 								new ServiceRegistryBuilder()
