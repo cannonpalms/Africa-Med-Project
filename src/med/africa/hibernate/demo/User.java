@@ -1,4 +1,4 @@
-package hibernate.demo;
+package med.africa.hibernate.demo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
