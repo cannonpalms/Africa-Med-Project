@@ -17,23 +17,6 @@ public class PatientUtil {
 
 	private PatientUtil() { }
 	
-	private static void addAllergiesToPatient(Patient patient, int numAllergies) {
-		for (int i = 0; i < numAllergies; i++) {
-			Allergy allergy = getAllergy(randomAllergyID());
-			patient.addAllergy(allergy);
-		}
-	}
-	
-	private static void createRandomPatient() {
-		String firstName = randomStr();
-		String lastName = randomStr();
-		Date dob = randomDate();
-		
-		Patient randPatient = new Patient(firstName, lastName, dob);
-		
-		addToDatabase(randPatient);
-	}
-	
 	@SuppressWarnings("unchecked")
 	public static List<Patient> getAllPatients() {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -44,6 +27,7 @@ public class PatientUtil {
 		session.close();
 		return result;
 	}
+	
 	public static Patient getPatient(long patientID) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
@@ -64,14 +48,6 @@ public class PatientUtil {
 		return result;
 	}
 	
-	private static void createRandomAllergy() {
-		String allergyName = randomStr();
-		
-		Allergy randAllergy = new Allergy(allergyName);
-		
-		addToDatabase(randAllergy);
-	}
-	
 	public static void addToDatabase(Persistable obj) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
@@ -85,6 +61,32 @@ public class PatientUtil {
 		} finally {
 			session.close();
 		}
+	}
+	
+	private static void addAllergiesToPatient(Patient patient, int numAllergies) {
+		for (int i = 0; i < numAllergies; i++) {
+			Allergy allergy = getAllergy(randomAllergyID());
+			patient.addAllergy(allergy);
+		}
+	}
+	
+	private static void createRandomPatient() {
+		String firstName = randomStr();
+		String lastName = randomStr();
+		Date dob = randomDate();
+		boolean gender = randomGender();
+		
+		Patient randPatient = new Patient(firstName, lastName, dob, gender);
+		
+		addToDatabase(randPatient);
+	}
+	
+	private static void createRandomAllergy() {
+		String allergyName = randomStr();
+		
+		Allergy randAllergy = new Allergy(allergyName);
+		
+		addToDatabase(randAllergy);
 	}
 	
 	private static String randomStr() {
@@ -105,6 +107,10 @@ public class PatientUtil {
 		return new Date(
 					new GregorianCalendar()
 					.getTimeInMillis()
-					);
+				);
+	}
+	
+	private static boolean randomGender() {
+		return Math.random() < 0.5;
 	}
 }

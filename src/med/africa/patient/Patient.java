@@ -21,27 +21,33 @@ import med.africa.hibernate.Persistable;
 @org.hibernate.annotations.Table(appliesTo="patients")
 public class Patient implements Persistable {
 
+	
 	private long id;
 	private String firstName;
 	private String middleName;
 	private String lastName;
 	private Date birthDate;
 	
+	//true: male, false: female (No this is not sexist dammit)
+	private boolean gender;
+	
 	private Set<Allergy> allergies;
 	
 	
 	public Patient() { }
 
-	public Patient(String firstName, String middleName, String lastName, Date birthDate) {
+	public Patient(String firstName, String middleName, String lastName, Date birthDate, boolean male) {
 		this.firstName = firstName;
 		this.middleName = middleName;
 		this.lastName = lastName;
 		this.birthDate = birthDate;
+		this.gender = male;
 	}
 	
-	public Patient(String firstName, String lastName, Date birthDate) {
-		this(firstName, null, lastName, birthDate);
+	public Patient(String firstName, String lastName, Date birthDate, boolean male) {
+		this(firstName, null, lastName, birthDate, male);
 	}
+	
 	@Id
 	@GeneratedValue
 	@Column(name="patient_id")
@@ -77,6 +83,15 @@ public class Patient implements Persistable {
 	)
 	public Set<Allergy> getAllergies() {
 		return allergies;
+	}
+	
+	@Column(name="gender")
+	public boolean getGender() {
+		return gender;
+	}
+	
+	public void setGender(boolean gender) {
+		this.gender = gender;
 	}
 
 	public void setId(long id) {
