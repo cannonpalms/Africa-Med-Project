@@ -17,6 +17,9 @@ public class Allergy implements Persistable {
 	
 	public Allergy() { }
 
+	public Allergy(long allergyID) {
+		this.allergyID = allergyID;
+	}
 	public Allergy(String allergyName) {
 		this.allergyName = allergyName;
 	}
@@ -40,5 +43,8 @@ public class Allergy implements Persistable {
 		this.allergyName = allergyName;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return allergyName;
+	}
 }

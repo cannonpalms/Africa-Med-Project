@@ -14,6 +14,12 @@
 	<classpathentry kind="lib" path="dependencies/hibernate/jboss-logging-3.1.0.GA.jar"/>
 	<classpathentry kind="lib" path="dependencies/hibernate/jboss-transaction-api_1.1_spec-1.0.1.Final.jar"/>
 	<classpathentry kind="lib" path="dependencies/mysql/mysql-connector-java-5.1.25-bin.jar"/>
+	<classpathentry kind="lib" path="/Applications/eclipse ee/plugins/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="/Applications/eclipse ee/plugins/org.apache.commons.lang_2.6.0.v201205030909.jar"/>
+	<classpathentry kind="lib" path="/Applications/eclipse ee/plugins/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="/Applications/eclipse ee/plugins/org.apache.commons.logging_1.1.1.v201101211721.jar"/>
+	<classpathentry kind="lib" path="/Applications/eclipse ee/plugins/org.apache.commons.collections_3.2.0.v2013030210310.jar"/>
+	<classpathentry kind="lib" path="/opt/local/share/java/commons-beanutils.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -133,20 +133,13 @@ public class Patient implements Persistable {
 	}
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		
-		sb.append(getId())
-			.append(" - ")
-			.append(getLastName())
-			.append(", ")
-			.append(getFirstName());
-		
-		if (middleName != null) {
-			sb.append(" ")
-				.append(getMiddleName());
-		}
-		
-		return sb.toString();
+		String str = lastName + ", "
+				+ firstName 
+				+ (middleName == null ? "" : middleName)
+				+ "\n" + (gender ? "male" : "female")
+				+ "\n" + birthDate.toString()
+				+ "\n" + allergies.toString();
+		return str;
 	}
 	
 }
