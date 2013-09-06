@@ -30,7 +30,20 @@ public class JSONParser {
 		Patient patient = new Patient();
 		
 		try {
-			JSONObject jsonObj = readJSONFromURL("http://www.cannoncomputing.com/africa/lookup.php?id=7");
+			JSONObject jsonObj = JSONObject.fromObject(json);
+			parseJSONObject(jsonObj, patient);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public Patient parseJSONFromURL(String url) {
+Patient patient = new Patient();
+		
+		try {
+			JSONObject jsonObj = readJSONFromURL(url);
 			parseJSONObject(jsonObj, patient);
 		}
 		catch (Exception e) {
