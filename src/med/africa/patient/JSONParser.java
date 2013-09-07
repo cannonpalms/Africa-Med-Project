@@ -32,6 +32,7 @@ public class JSONParser {
 		try {
 			JSONObject jsonObj = JSONObject.fromObject(json);
 			parseJSONObject(jsonObj, patient);
+			return patient;
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -45,6 +46,7 @@ public class JSONParser {
 		try {
 			JSONObject jsonObj = readJSONFromURL(url);
 			parseJSONObject(jsonObj, patient);
+			return patient;
 		}
 		catch (Exception e) {
 			e.printStackTrace();
