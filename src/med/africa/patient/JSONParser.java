@@ -41,7 +41,7 @@ public class JSONParser {
 	}
 	
 	public Patient parseJSONFromURL(String url) {
-	Patient patient = new Patient();
+		Patient patient = new Patient();
 		
 		try {
 			JSONObject jsonObj = readJSONFromURL(url);
