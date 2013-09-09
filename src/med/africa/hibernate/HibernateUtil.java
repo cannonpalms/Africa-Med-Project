@@ -1,9 +1,9 @@
 package med.africa.hibernate;
 
-import med.africa.hibernate.demo.User;
 import med.africa.patient.Allergy;
 import med.africa.patient.Patient;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistryBuilder;
@@ -48,8 +48,6 @@ public class HibernateUtil {
 	static {
 		Configuration conf = new Configuration()
 						.configure(CONFIG_FILE_PATH)
-						.addPackage("med.africa.hibernate.demo")
-						.addAnnotatedClass(User.class)
 						.addPackage("med.africa.patient")
 						.addAnnotatedClass(Patient.class)
 						.addAnnotatedClass(Allergy.class);
@@ -62,5 +60,9 @@ public class HibernateUtil {
 	
 	public static SessionFactory getSessionFactory() {
 		return SESSION_FACTORY;
+	}
+	
+	public static Session openSession() {
+		return SESSION_FACTORY.openSession();
 	}
 }
